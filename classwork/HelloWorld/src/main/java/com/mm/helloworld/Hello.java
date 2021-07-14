@@ -2,7 +2,7 @@
  * @author: Martin Melody
  * email: mmelody588@gmail.com
  * date: 07/12/2021
-*  purpose: My first Hello World program in NetBeans IDE
+ * purpose: My first Hello World program in NetBeans IDE
  */
 
 package com.mm.helloworld;
