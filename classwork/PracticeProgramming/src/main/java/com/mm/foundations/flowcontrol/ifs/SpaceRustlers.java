@@ -2,7 +2,7 @@
  * @author: Martin Melody
  * email: mmelody588@gmail.com
  * date: 07/14/2021
- * purpose: Exercise 3.4 Space Rustlers
+ * purpose: Exercise 4.4 Space Rustlers
  */
 package com.mm.foundations.flowcontrol.ifs;
 

@@ -25,21 +25,21 @@ public class PassingTheTuringTest {
         Scanner in = new Scanner(System.in);
         
         System.out.println("Hello there!");
-        System.out.println("What is your name? ");
+        System.out.print("What is your name? ");
         userName = in.nextLine();
         System.out.println();
         System.out.println("Hi, " + userName + "! I'm " + compName + ".");
-        System.out.println("What's your favorite color? ");
+        System.out.print("What's your favorite color? ");
         userColor = in.nextLine();
         System.out.println();
         System.out.println("Huh, " + userColor + "? Mine's " + compColor);
         System.out.println();
         System.out.println("I really like " + compFruit + ". They're my favorite fruit, too.");
-        System.out.println("What's YOUR favorite fruit, " + userName + "? ");
+        System.out.print("What's YOUR favorite fruit, " + userName + "? ");
         userFruit = in.nextLine();
         System.out.println();
         System.out.println("Really? " + userFruit + "? That's wild!");
-        System.out.println("Speaking of favorites, what's your favorite number? ");
+        System.out.print("Speaking of favorites, what's your favorite number? ");
         userNum = Integer.parseInt(in.nextLine());
         System.out.println();
         System.out.println(userNum + " is a cool number. Mine's " + compNum);
