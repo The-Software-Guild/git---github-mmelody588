@@ -100,6 +100,6 @@ public class StudentQuizGrades {
                 }
             }
         }
-        System.out.println(name + " has the lowest quiz score of " + max);
+        System.out.println(name + " has the lowest quiz score of " + min);
     }
 }

@@ -7,10 +7,19 @@
 package comm.mm.classroster;
 
 import com.mm.classroster.controller.ClassRosterController;
+import com.mm.classroster.dao.ClassRosterDao;
+import com.mm.classroster.dao.ClassRosterDaoFileImpl;
+import com.mm.classroster.ui.ClassRosterView;
+import com.mm.classroster.ui.UserIO;
+import com.mm.classroster.ui.UserIOConsoleImpl;
 
 public class App {
     public static void main(String[] args) {
-        ClassRosterController controller = new ClassRosterController();
+        UserIO myIo = new UserIOConsoleImpl();
+        ClassRosterView myView = new ClassRosterView(myIo);
+        ClassRosterDao myDao = new ClassRosterDaoFileImpl();
+        ClassRosterController controller = 
+                new ClassRosterController(myDao, myView);
         controller.run();
     }   
 }
