@@ -5,6 +5,10 @@
  */
 package com.mm.testing.dao.implementations;
 
+import com.mm.testing.dao.MonsterDao;
+import com.mm.testing.model.Monster;
+import com.mm.testing.model.MonsterType;
+import java.io.FileNotFoundException;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -12,50 +16,45 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-/**
- *
- * @author mmelo
- */
 public class AGoodMonsterDaoTest {
     
+    MonsterDao dao = new AGoodMonsterDao();
+    
     public AGoodMonsterDaoTest() {
-    }
-
-    @org.junit.jupiter.api.BeforeAll
-    public static void setUpClass() throws Exception {
-    }
-
-    @org.junit.jupiter.api.AfterAll
-    public static void tearDownClass() throws Exception {
-    }
-
-    @org.junit.jupiter.api.BeforeEach
-    public void setUp() throws Exception {
-    }
-
-    @org.junit.jupiter.api.AfterEach
-    public void tearDown() throws Exception {
+        
     }
     
     @BeforeAll
     public static void setUpClass() {
+        
     }
     
     @AfterAll
     public static void tearDownClass() {
+        
     }
     
     @BeforeEach
     public void setUp() {
+        
     }
     
     @AfterEach
     public void tearDown() {
+        
     }
 
-    @org.junit.jupiter.api.Test
-    public void testSomeMethod() {
-        fail("The test case is a prototype.");
+    @Test
+    public void testCreateValidMonster() {
+        Monster m = new Monster();
+        m.setName("Booga");
+        m.setType(MonsterType.YETI);
+        m.setPeopleEaten(4);
+        m.setFavoriteFood("Mutton Stir Fry");
+        try{
+            dao.addMonster(1, m);
+        }catch(Exception e){
+            fail("Monster was valid. No Exception should be thrown.");
+        }
     }
-    
 }
