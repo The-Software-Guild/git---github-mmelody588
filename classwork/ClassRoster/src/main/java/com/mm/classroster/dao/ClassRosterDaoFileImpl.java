@@ -21,8 +21,16 @@ import java.util.Scanner;
 
 public class ClassRosterDaoFileImpl implements ClassRosterDao{
     
-    public static final String ROSTER_FILE = "roster.txt";
+    private final String ROSTER_FILE;
     public static final String DELIMITER = "::";
+
+    public ClassRosterDaoFileImpl() {
+        this.ROSTER_FILE = "roster.txt";
+    }
+
+    public ClassRosterDaoFileImpl(String testFile) {
+        this.ROSTER_FILE = testFile;
+    }
 
     private Map<String, Student> students = new HashMap<>();
     
