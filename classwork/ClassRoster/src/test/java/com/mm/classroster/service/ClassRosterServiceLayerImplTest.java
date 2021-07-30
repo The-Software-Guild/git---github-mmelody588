@@ -1,15 +1,11 @@
 /*
  * @author: Martin Melody
  * email: mmelody588@gmail.com
- * date: 07/28/2021
+ * date: 07/29/2021
  * purpose: Service Layer Test Cases for Class Roster project
  */
 package com.mm.classroster.service;
 
-import com.mm.classroster.dao.ClassRosterAuditDao;
-import com.mm.classroster.dao.ClassRosterAuditDaoFileImpl;
-import com.mm.classroster.dao.ClassRosterDao;
-import com.mm.classroster.dao.ClassRosterDaoFileImpl;
 import com.mm.classroster.dao.ClassRosterPersistenceException;
 import com.mm.classroster.dto.Student;
 import org.junit.After;
@@ -18,20 +14,23 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-/**
- *
- * @author mmelo
- */
 public class ClassRosterServiceLayerImplTest {
     
     private ClassRosterServiceLayer service;
     
     public ClassRosterServiceLayerImplTest() {
-        ClassRosterDao dao = new ClassRosterDaoStubImpl();
+        /*ClassRosterDao dao = new ClassRosterDaoStubImpl();
         ClassRosterAuditDao auditDao = new ClassRosterAuditDaoFileImpl();
         
-        service = new ClassRosterServiceLayerImpl(dao, auditDao);
+        service = new ClassRosterServiceLayerImpl(dao, auditDao);*/
+        
+        ApplicationContext ctx = 
+            new ClassPathXmlApplicationContext("classpath:applicationContext.xml");
+        service = 
+            ctx.getBean("service", ClassRosterServiceLayer.class);
     }
     
     @BeforeClass
