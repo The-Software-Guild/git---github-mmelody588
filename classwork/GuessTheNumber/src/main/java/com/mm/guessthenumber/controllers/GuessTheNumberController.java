@@ -11,6 +11,7 @@ import com.mm.guessthenumber.entity.Round;
 import com.mm.guessthenumber.service.GuessTheNumberService;
 import java.sql.Timestamp;
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,6 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/guessthenumber")
 public class GuessTheNumberController {
+    @Autowired
     private final GuessTheNumberService service;
     
     public GuessTheNumberController(GuessTheNumberService service){
